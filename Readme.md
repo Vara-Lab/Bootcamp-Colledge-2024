@@ -5,7 +5,7 @@
 
 Welcome to the Colledge Bootcamp 2024. In this bootcamp, we will explore frontend development and the deployment of smart contracts using Sails and the Vara network. This repository contains all the resources and guides needed to complete the bootcamp.
 
-## Frontend
+# Frontend
 
 In this section, you will learn how to build modern frontend applications. Follow the steps below to get started.
 
@@ -34,7 +34,7 @@ yarn start
 
 # Sails Contracts on Vara Network
 
-# Deploy the Contract on the IDEA Platform and Interact with Your Contract
+## Deploy the Contract on the IDEA Platform and Interact with Your Contract
 
 ## Step 1: Open Contract on Gitpod
 
