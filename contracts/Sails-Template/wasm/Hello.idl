@@ -1,0 +1,41 @@
+type Events = enum {
+  FirstEvent,
+  SecondEvent: str,
+  ThirdEvent: u128,
+  FourtEvent: struct { first_field: actor_id, second_field: vec actor_id },
+};
+
+type Errors = enum {
+  FirstError,
+  SecondError,
+  ThirdErrors,
+  FourtErrors,
+};
+
+type CustomInput = struct {
+  firstfield: str,
+  secondfield: u128,
+  thirdfield: actor_id,
+};
+
+type IoCustomStruct = struct {
+  firstfield: str,
+  secondfield: str,
+  thirdfield: u128,
+  fourthfield: vec struct { actor_id, CustomInput },
+  fifthfield: vec struct { actor_id, u128 },
+};
+
+constructor {
+  New : ();
+};
+
+service Template {
+  Fifthmethod : (_first_field: u128, _second_field: vec actor_id) -> result (Events, Errors);
+  Firstmethod : () -> result (Events, Errors);
+  Fourthmethod : (input: CustomInput) -> result (Events, Errors);
+  Secondmethod : (input: str) -> result (Events, Errors);
+  Thirdmethod : (input: u128) -> result (Events, Errors);
+  query State : () -> IoCustomStruct;
+};
+
