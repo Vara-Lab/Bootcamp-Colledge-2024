@@ -27,4 +27,4 @@ Once the compilation is complete, locate the `*.opt.wasm` file in the `target/wa
 
 1. Access [Gear IDE](https://idea.gear-tech.io/programs?node=wss%3A%2F%2Frpc.vara.network) using your web browser.
 2. Connect your Substrate wallet to Gear IDE.
-3. Upload the `*.opt.wasm` and `metadata.txt` files by clicking the "Upload Program" button.
+3. Upload the `*.opt.wasm` and `metadata.txt/*.idl` files by clicking the "Upload Program" button.
