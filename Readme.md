@@ -28,7 +28,7 @@ yarn install
 To start the development server and see your project in action, run:
 
 ```bash
-yarn start
+yarn dev
 ```
 
 
