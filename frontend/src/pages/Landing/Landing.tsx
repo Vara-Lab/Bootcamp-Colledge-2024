@@ -1,16 +1,24 @@
-import { Center, VStack } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
+
+import { Center, HStack, VStack, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import { GreenColor } from "./Green-Color";
+import { RedColor } from "./Red-Color";
+import { YellowColor } from "./Yellow-Color";
+import { ReadState } from "./ReadState";
+
 
 function Landing() {
   return (
     <Center>
+    <HStack>
       <VStack>
-      <Button textColor="black" bg="#00ffc4" as={Link} to="/home">
-        Examples
-      </Button>
-      </VStack>  
-    </Center>
+        <GreenColor />
+        <YellowColor />
+        <RedColor />
+      </VStack>
+      <ReadState />
+    </HStack>
+  </Center>
   );
 }
 

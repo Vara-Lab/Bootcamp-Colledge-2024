@@ -7371,6 +7371,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"commander@npm:12.1.0":
+  version: 12.1.0
+  resolution: "commander@npm:12.1.0"
+  checksum: 6e1996680c083b3b897bfc1cfe1c58dfbcd9842fd43e1aaf8a795fbc237f65efcc860a3ef457b318e73f29a4f4a28f6403c3d653d021d960e4632dd45bde54a9
+  languageName: node
+  linkType: hard
+
 "commander@npm:^4.0.0":
   version: 4.1.1
   resolution: "commander@npm:4.1.1"
@@ -11138,6 +11145,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"sails-js@npm:0.1.5":
+  version: 0.1.5
+  resolution: "sails-js@npm:0.1.5"
+  dependencies:
+    commander: "npm:12.1.0"
+  peerDependencies:
+    "@gear-js/api": ^0.38.1
+    "@polkadot/api": ^11.0.1
+    "@polkadot/types": ^11.0.1
+  bin:
+    sails-js: app.js
+  checksum: 7c01d1cbc5fd0c784be764f703e4db18c4ee27f8a0308c17b6e107a2fe3cc73746c68c260181d01e6d43700a70e808a554a4a445fad034c4b03f819ff556f3b9
+  languageName: node
+  linkType: hard
+
 "sass@npm:1.62.0":
   version: 1.62.0
   resolution: "sass@npm:1.62.0"
@@ -11729,6 +11751,7 @@ __metadata:
     react-icons: "npm:5.2.1"
     react-router-dom: "npm:6.22.2"
     react-transition-group: "npm:4.4.5"
+    sails-js: "npm:0.1.5"
     sass: "npm:1.62.0"
     simplebar: "npm:6.2.7"
     simplebar-react: "npm:3.2.6"
