@@ -1,10 +1,8 @@
-
 import { useAccount, useApi, useAlert } from "@gear-js/react-hooks";
 import { web3FromSource } from "@polkadot/extension-dapp";
 import { Button } from "@chakra-ui/react";
 import { Sails } from "sails-js";
-import { traffic_light_contract
-} from "./const";
+import { traffic_light_contract } from "./const";
 
 function RedColor() {
   const alert = useAlert();
@@ -13,7 +11,7 @@ function RedColor() {
 
   const signer = async () => {
     if (!accounts) {
-      alert.error('Accounts is not ready');
+      alert.error("Accounts is not ready");
       return;
     }
 
@@ -24,15 +22,15 @@ function RedColor() {
 
     if (isVisibleAccount) {
       if (!api) {
-        alert.error('Api is not ready');
+        alert.error("Api is not ready");
         return;
       }
 
       if (!account || !accounts) {
-        alert.error('Account is not ready');
+        alert.error("Account is not ready");
         return;
       }
-      
+
       const sails = await Sails.new();
       sails.setApi(api);
 
@@ -42,16 +40,15 @@ function RedColor() {
       sails.parseIdl(traffic_light_contract.programIDL);
 
       try {
-        alert.info('Will send a message');
-        
-        const transaction = await sails
-          .services
-          .TrafficLight
-          .functions
-          .Red();
+        alert.info("Will send a message");
+
+        const transaction = await sails.services.TrafficLight.functions.Red();
+
+        const allowOtherPanics = false;
+        const increaseGasPercentage = 80;
 
         transaction.withAccount(account.decodedAddress, { signer });
-        await transaction.calculateGas();
+        await transaction.calculateGas(allowOtherPanics ,increaseGasPercentage);
 
         const { blockHash, response } = await transaction.signAndSend();
 
@@ -59,17 +56,21 @@ function RedColor() {
 
         await response();
 
-        alert.success('Message send!');
-        
+        alert.success("Message send!");
       } catch (e) {
-        alert.error('Error while sending message');
+        alert.error("Error while sending message");
       }
     } else {
       alert.error("Account not available to sign");
     }
   };
 
-  return (<Button backgroundColor="red.300" onClick={signer} > Red</Button>)
+  return (
+    <Button backgroundColor="red.300" onClick={signer}>
+      {" "}
+      Red
+    </Button>
+  );
 }
 
 export { RedColor };
