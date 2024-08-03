@@ -14,14 +14,14 @@ pub mod states;
 pub mod services;
 
 // import necesary data (state and CustomStruct state)
-use contract_states::traffic_light_state::{
+use crate::states::state::{
     TRAFFIC_LIGHT_STATE,
     TrafficLightState
 };
 
 
 // Import service to be used for the program
-use services::traffic_light_service::TrafficLightService;
+use services::service::TrafficLightService;
 
 // Traffic light program struct to build the program (there can only be one per contract)
 #[derive(Default)]

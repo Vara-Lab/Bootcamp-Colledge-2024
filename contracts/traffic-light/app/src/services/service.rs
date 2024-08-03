@@ -1,4 +1,4 @@
-use sails_rtl::{
+use sails_rs::{
     gstd::{
         service,
         msg
@@ -10,7 +10,7 @@ use sails_rtl::{
 use gstd::exec::sleep_for;
 
 // import the state
-use crate::contract_states::traffic_light_state::{
+use crate::states::state::{
     TRAFFIC_LIGHT_STATE,
     traffic_light_state_mut,
     IoTrafficLightState
@@ -105,8 +105,8 @@ impl TrafficLightService {
 
 // struct to use as a response to the user
 #[derive(Encode, Decode, TypeInfo)]
-#[codec(crate = sails_rtl::scale_codec)]
-#[scale_info(crate = sails_rtl::scale_info)]
+#[codec(crate = sails_rs::scale_codec)]
+#[scale_info(crate = sails_rs::scale_info)]
 
 pub enum TrafficLightEvent {
     Green,

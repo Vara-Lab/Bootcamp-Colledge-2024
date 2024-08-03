@@ -1,5 +1,5 @@
 // necesary cretes
-use sails_rtl::{
+use sails_rs::{
     prelude::*,
     collections::HashMap,
 };
@@ -16,8 +16,8 @@ pub struct TrafficLightState {
 
 // Create a struct that can be send to the user who reads state
 #[derive(Encode, Decode, TypeInfo)]
-#[codec(crate = sails_rtl::scale_codec)]
-#[scale_info(crate = sails_rtl::scale_info)]
+#[codec(crate = sails_rs::scale_codec)]
+#[scale_info(crate = sails_rs::scale_info)]
 pub struct IoTrafficLightState {
     pub current_light: String,
     pub all_users: Vec<(ActorId, String)>,

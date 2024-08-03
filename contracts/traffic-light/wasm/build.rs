@@ -1,6 +1,6 @@
 use sails_idl_gen::program;
 use std::{env, fs::File, path::PathBuf};
-use app::MyProgram;
+use app::TrafficLightProgram;
 
 fn main() {
     gwasm_builder::build();
@@ -11,5 +11,5 @@ fn main() {
 
     let idl_file = File::create(idl_file_path).unwrap();
 
-    program::generate_idl::<MyProgram>(idl_file).unwrap();
+    program::generate_idl::<TrafficLightProgram>(idl_file).unwrap();
 }
