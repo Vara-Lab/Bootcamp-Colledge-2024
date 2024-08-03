@@ -1,0 +1,16 @@
+constructor {
+  New : (name: str);
+};
+
+service Token {
+  Mint : (to: actor_id, value: u256) -> null;
+  Transfer : (from: actor_id, to: actor_id, value: u256) -> null;
+  query BalanceOf : (account: actor_id) -> u256;
+  query Name : () -> str;
+
+  events {
+    Transferred: struct { from: actor_id, to: actor_id, value: u256 };
+    Minted: struct { to: actor_id, value: u256 };
+  }
+};
+
